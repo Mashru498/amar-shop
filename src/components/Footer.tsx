@@ -1,10 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import { Facebook, Instagram, Youtube, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import { Globe, Camera, Video, Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
 
 export default function Footer() {
   return (
-    // মোবাইলে BottomNav বারের জন্য নিচে এক্সট্রা প্যাডিং (pb-24) রাখা হয়েছে, এটি সিনিয়র ডেভেলপারদের ট্রিক!
     <footer className="bg-slate-950 text-slate-300 pt-16 pb-24 md:pb-10 border-t border-slate-800 relative z-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
@@ -19,9 +18,9 @@ export default function Footer() {
               Experience the most professional online shopping. Premium products, secure checkout, and fast delivery right at your doorstep.
             </p>
             <div className="flex space-x-4 mt-auto">
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-lg"><Facebook className="w-5 h-5" /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all shadow-lg"><Instagram className="w-5 h-5" /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-all shadow-lg"><Youtube className="w-5 h-5" /></a>
+              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-lg"><Globe className="w-5 h-5" /></a>
+              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all shadow-lg"><Camera className="w-5 h-5" /></a>
+              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-all shadow-lg"><Video className="w-5 h-5" /></a>
             </div>
           </div>
 
