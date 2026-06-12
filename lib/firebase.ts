@@ -1,21 +1,18 @@
-import { initializeApp, getApps, getApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+import { initializeApp, getApps, getApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 
+// ফায়ারবেস থেকে কপি করা আপনার নিজস্ব কনফিগ ভ্যালুগুলো এখানে বসান
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  apiKey: "AIzaSyCrflDSTbBL_BMLB7LTy_OtLAdI0Fe8buM",
+  authDomain: "amar-shop-5f9d1.firebaseapp.com",
+  projectId: "amar-shop-5f9d1",
+  storageBucket: "amar-shop-5f9d1.firebasestorage.app",
+  messagingSenderId: "277316235922",
+  appId: "1:277316235922:web:525c4a7cfced0280692c4b"
 };
 
-// Singleton pattern: এটি নিশ্চিত করবে যে ফায়ারবেস বারবার লোড হয়ে ওয়েবসাইটকে স্লো করবে না
+// Next.js-এ যাতে বারবার ডেটাবেস লোড না হয়, তার জন্য প্রফেশনাল সিঙ্গলটন (Singleton) প্যাটার্ন
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const auth = getAuth(app);
-const db = getFirestore(app);
-const storage = getStorage(app);
 
-export { app, auth, db, storage };
+export { app, auth };
