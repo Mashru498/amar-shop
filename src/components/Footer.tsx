@@ -6,11 +6,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#0B1120] text-slate-400 pt-16 pb-24 md:pb-8 relative z-20 border-t border-slate-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* MAIN FOOTER COLUMNS */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-12">
           
-          {/* Brand & Intro */}
           <div className="lg:col-span-4 flex flex-col">
             <Link href="/" className="text-3xl font-black tracking-tighter mb-5 inline-block">
               <span className="text-blue-500">Amar</span><span className="text-orange-500">Shop</span>
@@ -24,7 +21,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div className="lg:col-span-3 lg:col-start-6">
             <h4 className="text-white font-bold text-base mb-6 tracking-wide uppercase">Quick Links</h4>
             <ul className="space-y-3.5 text-sm font-medium">
@@ -39,7 +35,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Support */}
           <div className="lg:col-span-2">
             <h4 className="text-white font-bold text-base mb-6 tracking-wide uppercase">Support</h4>
             <ul className="space-y-3.5 text-sm font-medium">
@@ -54,7 +49,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div className="lg:col-span-3">
             <h4 className="text-white font-bold text-base mb-6 tracking-wide uppercase">Contact Us</h4>
             <ul className="space-y-4 text-sm font-medium">
@@ -70,7 +64,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* BOTTOM BAR */}
         <div className="pt-8 border-t border-slate-800/80 text-center md:text-left">
           <p className="text-sm font-medium">
             © {new Date().getFullYear()} <span className="text-white font-bold">Amar Shop</span>. All rights reserved.
