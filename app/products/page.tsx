@@ -4,16 +4,29 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Filter, ChevronDown, Grid, List, Star, ShoppingCart, ArrowRight } from 'lucide-react';
 
+// প্রফেশনাল টাইপস্ক্রিপ্ট ইন্টারফেস (এটিই বিল্ড এররটি ফিক্স করবে)
+type Product = {
+  id: number;
+  name: string;
+  price: string;
+  oldPrice?: string; // '?' মানে এটি থাকতেও পারে, নাও থাকতে পারে (Optional)
+  category: string;
+  rating: number;
+  reviews: number;
+  image: string;
+  tag?: string;
+};
+
 export default function ProductsPage() {
   const [viewType, setViewType] = useState<'grid' | 'list'>('grid');
 
-  // প্রফেশনাল ডামি প্রোডাক্ট ডেটা
-  const products = [
-    { id: 1, name: 'AirPods Pro (2nd Gen)', price: '৳ ২৯,৯৯৯', category: 'Audio', rating: 4.9, reviews: 128, image: 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?q=80&w=500&auto=format&fit=crop', tag: 'NEW' },
-    { id: 2, name: 'Sony WH-1000XM5', price: '৳ ৩৮,৫০০', category: 'Audio', rating: 4.8, reviews: 95, image: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=500&auto=format&fit=crop', tag: 'SALE' },
-    { id: 3, name: 'Logitech MX Master 3S', price: '৳ ১২,৫০০', category: 'Accessories', rating: 4.9, reviews: 210, image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?q=80&w=500&auto=format&fit=crop' },
+  // টাইপস্ক্রিপ্ট টাইপ (Product[]) যুক্ত করে ডেটা আপডেট করা হলো
+  const products: Product[] = [
+    { id: 1, name: 'AirPods Pro (2nd Gen)', price: '৳ ২৯,৯৯৯', oldPrice: '৳ ৩২,০০০', category: 'Audio', rating: 4.9, reviews: 128, image: 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?q=80&w=500&auto=format&fit=crop', tag: 'NEW' },
+    { id: 2, name: 'Sony WH-1000XM5', price: '৳ ৩৮,৫০০', oldPrice: '৳ ৪০,০০০', category: 'Audio', rating: 4.8, reviews: 95, image: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=500&auto=format&fit=crop', tag: 'SALE' },
+    { id: 3, name: 'Logitech MX Master 3S', price: '৳ ১২,৫০০', oldPrice: '৳ ১৪,০০০', category: 'Accessories', rating: 4.9, reviews: 210, image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?q=80&w=500&auto=format&fit=crop' },
     { id: 4, name: 'Keychron K2 V2', price: '৳ ৯,৮০০', category: 'Accessories', rating: 4.7, reviews: 84, image: 'https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=500&auto=format&fit=crop' },
-    { id: 5, name: 'MacBook Pro M3 Max', price: '৳ ৩,২০,০০০', category: 'Laptops', rating: 5.0, reviews: 45, image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=500&auto=format&fit=crop', tag: 'HOT' },
+    { id: 5, name: 'MacBook Pro M3 Max', price: '৳ ৩,২০,০০০', oldPrice: '৳ ৩,৫০,০০০', category: 'Laptops', rating: 5.0, reviews: 45, image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=500&auto=format&fit=crop', tag: 'HOT' },
     { id: 6, name: 'PlayStation 5 Pro', price: '৳ ৭০,০০০', category: 'Gaming', rating: 4.9, reviews: 320, image: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?q=80&w=500&auto=format&fit=crop' },
   ];
 
@@ -23,7 +36,7 @@ export default function ProductsPage() {
     <div className="min-h-screen bg-[#F8FAFC] font-sans pb-20 selection:bg-orange-500 selection:text-white">
       
       {/* =========================================
-          PAGE HEADER (Minimalist Premium Look)
+          PAGE HEADER
           ========================================= */}
       <div className="bg-white border-b border-slate-200 pt-8 pb-6">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +54,7 @@ export default function ProductsPage() {
         <div className="flex flex-col lg:flex-row gap-8">
           
           {/* =========================================
-              LEFT SIDEBAR (Filters - Senior Dev Style)
+              LEFT SIDEBAR
               ========================================= */}
           <aside className="w-full lg:w-64 flex-shrink-0">
             <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_5px_20px_rgba(0,0,0,0.02)] sticky top-28">
@@ -85,7 +98,7 @@ export default function ProductsPage() {
               ========================================= */}
           <div className="flex-1">
             
-            {/* Toolbar (Sorting & Views) */}
+            {/* Toolbar */}
             <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-[0_5px_20px_rgba(0,0,0,0.02)] mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <p className="text-sm font-medium text-slate-500">Showing <span className="font-bold text-slate-900">1-{products.length}</span> of {products.length} results</p>
               
@@ -119,11 +132,11 @@ export default function ProductsPage() {
                     </span>
                   )}
 
-                  {/* Image Box with overlay action */}
+                  {/* Image Box */}
                   <div className={`relative rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center shrink-0 ${viewType === 'list' ? 'w-48 h-48 mb-0' : 'aspect-square mb-5'}`}>
                     <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     
-                    {/* Hover Add to Cart Overlay (Only visible on Desktop Grid hover) */}
+                    {/* Hover Add to Cart Overlay */}
                     {viewType === 'grid' && (
                       <div className="absolute inset-x-0 bottom-0 p-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hidden md:block">
                         <button className="w-full bg-slate-900/90 backdrop-blur-sm text-white font-bold py-3 rounded-xl flex items-center justify-center hover:bg-orange-500 transition-colors shadow-lg">
@@ -152,7 +165,7 @@ export default function ProductsPage() {
                         {product.oldPrice && <span className="block text-xs text-slate-400 line-through font-semibold">{product.oldPrice}</span>}
                       </div>
 
-                      {/* Mobile / List View Button */}
+                      {/* Button */}
                       <button className={`bg-slate-100 text-slate-900 hover:bg-orange-500 hover:text-white transition-all flex items-center justify-center shadow-sm active:scale-95 ${viewType === 'grid' ? 'md:hidden w-10 h-10 rounded-xl' : 'px-6 py-3 rounded-xl font-bold'}`}>
                         <ShoppingCart className={`${viewType === 'list' ? 'mr-2 w-5 h-5' : 'w-4 h-4'}`} />
                         {viewType === 'list' && 'Add to Cart'}
@@ -164,7 +177,7 @@ export default function ProductsPage() {
               ))}
             </div>
 
-            {/* Pagination (Premium style) */}
+            {/* Pagination */}
             <div className="mt-12 flex justify-center">
               <div className="inline-flex bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden p-1">
                 <button className="px-4 py-2 font-bold text-sm text-white bg-blue-600 rounded-lg shadow-sm">1</button>
