@@ -1,8 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  // ডার্ক মোডের মাস্টার সুইচ
-  darkMode: 'class', 
+  darkMode: "class", // ডার্ক মোড অন করার মাস্টার সুইচ
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
