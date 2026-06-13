@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Star, ShoppingCart, Zap, ShieldCheck, Truck } from 'lucide-react';
+import { ArrowRight, Star, ShoppingCart, Zap } from 'lucide-react';
 
 export default function HomePage() {
   // প্রফেশনাল প্রোডাক্ট ডেটা
@@ -85,46 +85,9 @@ export default function HomePage() {
       </section>
 
       {/* =========================================
-          FEATURES SECTION (Premium Trust Badges)
-          ========================================= */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="bg-white rounded-3xl p-6 md:p-8 shadow-[0_5px_20px_rgba(0,0,0,0.02)] border border-slate-100 flex flex-wrap gap-6 justify-between items-center">
-          <div className="flex items-center gap-4 w-full sm:w-auto">
-            <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 shrink-0">
-              <Truck className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="font-bold text-slate-900 text-sm">Free Delivery</h4>
-              <p className="text-xs text-slate-500 font-medium">For orders over ৳৫,০০০</p>
-            </div>
-          </div>
-          <div className="hidden md:block w-px h-10 bg-slate-100"></div>
-          <div className="flex items-center gap-4 w-full sm:w-auto">
-            <div className="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 shrink-0">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="font-bold text-slate-900 text-sm">1 Year Warranty</h4>
-              <p className="text-xs text-slate-500 font-medium">100% genuine products</p>
-            </div>
-          </div>
-          <div className="hidden lg:block w-px h-10 bg-slate-100"></div>
-          <div className="flex items-center gap-4 w-full sm:w-auto">
-            <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center text-green-600 shrink-0">
-              <Zap className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="font-bold text-slate-900 text-sm">Fast Payment</h4>
-              <p className="text-xs text-slate-500 font-medium">100% secure checkout</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================
           PRODUCT GRID (Touch-Friendly 2-Column Mobile)
           ========================================= */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 mb-20 mt-4">
         <div className="flex justify-between items-end mb-8">
           <div>
             <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">Just For You</h2>
