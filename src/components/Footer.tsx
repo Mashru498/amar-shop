@@ -72,7 +72,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info (Only Email remains) */}
+          {/* Contact Info (Only your Email remains) */}
           <div className="lg:col-span-2">
             <h4 className="text-white font-bold text-[13px] tracking-[0.15em] mb-7 uppercase">Contact Us</h4>
             <ul className="space-y-4 text-sm font-medium">
@@ -80,7 +80,8 @@ export default function Footer() {
                 <div className="w-10 h-10 rounded-xl bg-[#0F172A] border border-slate-800 flex items-center justify-center mr-4 shrink-0 group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300">
                   <Mail className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
                 </div>
-                <a href="mailto:support@amarshop.com" className="group-hover:text-white transition-colors">support@amarshop.com</a>
+                {/* Email updated perfectly here */}
+                <a href="mailto:mashru2100ci@gmail.com" className="group-hover:text-white transition-colors">mashru2100ci@gmail.com</a>
               </li>
             </ul>
           </div>
