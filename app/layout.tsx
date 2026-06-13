@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "../src/components/Navbar";
-import BottomNav from "../src/components/BottomNav";
-import Footer from "../src/components/Footer"; // নতুন ফুটার ইমপোর্ট করা হলো
+import Footer from "../src/components/Footer"; 
 
 export const metadata: Metadata = {
-  title: "Amar Shop | Best E-commerce Platform",
+  title: "Amar Shop Pro | Best E-commerce Platform",
   description: "Experience the most professional online shopping with Amar Shop.",
 };
 
@@ -15,8 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body suppressHydrationWarning className="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased selection:bg-orange-500 selection:text-white">
+    <html lang="en" suppressHydrationWarning>
+      {/* ম্যাজিক: বডিতে dark:bg-slate-950 এবং dark:text-white যুক্ত করা হয়েছে */}
+      <body suppressHydrationWarning className="min-h-screen flex flex-col bg-[#F8FAFC] dark:bg-slate-950 text-slate-900 dark:text-white antialiased transition-colors duration-500 selection:bg-orange-500 selection:text-white">
         <Navbar />
         
         {/* Main Content */}
@@ -24,9 +24,7 @@ export default function RootLayout({
           {children}
         </main>
 
-        {/* Footer & Mobile Bottom Navigation */}
         <Footer />
-        <BottomNav />
       </body>
     </html>
   );
