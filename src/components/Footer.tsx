@@ -3,6 +3,19 @@ import Link from 'next/link';
 import { Mail } from 'lucide-react';
 
 export default function Footer() {
+  
+  // প্রফেশনাল ডেভেলপমেন্ট অ্যাপ্রোচ: লিংকগুলোকে আলাদা অ্যারেতে রাখা হয়েছে যাতে ভবিষ্যতে পরিবর্তন করা সহজ হয়
+  const quickLinks = [
+    { name: 'About Us', href: '/about' },
+    { name: 'Contact Us', href: '/contact' },
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms & Conditions', href: '/terms' }
+  ];
+
+  const supportLinks = [
+    { name: 'Contact Support', href: '/support' }
+  ];
+
   return (
     <footer className="bg-[#050B14] text-slate-400 pt-20 pb-24 md:pb-10 relative z-20 border-t border-slate-800/60 font-sans overflow-hidden">
       
@@ -16,7 +29,7 @@ export default function Footer() {
             ========================================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           
-          {/* Brand & Intro (Takes up 5 columns for perfect spacing) */}
+          {/* Brand & Intro */}
           <div className="lg:col-span-5 flex flex-col pr-0 md:pr-10">
             <Link href="/" className="text-3xl font-black tracking-tighter mb-6 inline-block">
               <span className="text-blue-500 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">Amar</span>
@@ -41,31 +54,30 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links (Updated flawlessly) */}
           <div className="lg:col-span-2 lg:col-start-7">
             <h4 className="text-white font-bold text-[13px] tracking-[0.15em] mb-7 uppercase">Quick Links</h4>
             <ul className="space-y-4 text-sm font-medium">
-              {['All Products', 'Flash Sale', 'About Us', 'Privacy Policy'].map((name) => (
-                <li key={name}>
-                  <Link href={`/${name.toLowerCase().replace(' ', '-')}`} className="group flex items-center hover:text-white transition-colors">
-                    {/* Minimalist Senior Dev Line Dash instead of generic arrows */}
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="group flex items-center hover:text-white transition-colors">
                     <span className="text-orange-500 mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300">⎯</span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">{name}</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">{link.name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Support (Minimalist and clean) */}
           <div className="lg:col-span-2">
             <h4 className="text-white font-bold text-[13px] tracking-[0.15em] mb-7 uppercase">Support</h4>
             <ul className="space-y-4 text-sm font-medium">
-              {['My Account', 'Track Order', 'Returns Policy', 'FAQs & Help'].map((name) => (
-                <li key={name}>
-                  <Link href="/support" className="group flex items-center hover:text-white transition-colors">
+              {supportLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="group flex items-center hover:text-white transition-colors">
                     <span className="text-orange-500 mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300">⎯</span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">{name}</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">{link.name}</span>
                   </Link>
                 </li>
               ))}
@@ -77,7 +89,6 @@ export default function Footer() {
             <h4 className="text-white font-bold text-[13px] tracking-[0.15em] mb-7 uppercase">Contact Us</h4>
             <ul className="space-y-4 text-sm font-medium">
               <li>
-                {/* Updated link with target="_blank" to open in a new tab smoothly */}
                 <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#sent?compose=new" target="_blank" rel="noopener noreferrer" className="flex items-center group cursor-pointer w-max tap-highlight-transparent">
                   <div className="w-10 h-10 rounded-xl bg-[#0F172A] border border-slate-800 flex items-center justify-center mr-4 shrink-0 group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300 shadow-sm group-hover:shadow-orange-500/20">
                     <Mail className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
